@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>灣區臻享生活｜Stonebrae 山景私邸</title>
+<style>
+:root{--ink:#17324a;--muted:#5f7487;--cream:#f4fbff;--paper:#ffffff;--gold:#d7a84a;--deep:#1976a8;--sky:#dff4ff;--bay:#68c7e8;--line:rgba(23,70,105,.13);--shadow:0 24px 80px rgba(50,112,145,.16)}
+*{box-sizing:border-box} body{margin:0;background:linear-gradient(135deg,#eaf8ff,#ffffff 50%,#dff2f8);color:var(--ink);font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;min-height:100vh}
+a{color:inherit}.app{display:grid;grid-template-columns:280px minmax(0,1fr);min-height:100vh}
+.sidebar{position:sticky;top:0;height:100vh;padding:38px 24px;background:linear-gradient(180deg,#dff5ff 0%,#a8def2 45%,#6abedc 100%);color:#153f5c;display:flex;flex-direction:column;z-index:10}
+.brand{padding:0 12px 30px;border-bottom:1px solid rgba(20,86,122,.16)}.brand .eyebrow{font-size:11px;letter-spacing:.28em;color:#1678a8}.brand h1{font-family:Georgia,"Songti SC",serif;font-weight:500;font-size:27px;line-height:1.25;margin:12px 0 8px}.brand p{margin:0;color:rgba(21,63,92,.68);font-size:13px;line-height:1.7}
+.tabs{display:grid;gap:10px;margin-top:30px}.tab{appearance:none;border:0;text-align:left;width:100%;padding:17px 16px;border-radius:14px;background:rgba(255,255,255,.18);color:#285f7c;cursor:pointer;transition:.25s;font-size:15px;display:grid;grid-template-columns:30px 1fr;align-items:center}.tab .n{font-family:Georgia,serif;color:#0f82b4}.tab:hover{background:rgba(255,255,255,.52);color:#114766;transform:translateX(3px)}.tab.active{background:#ffffff;color:#105b83;box-shadow:0 12px 30px rgba(34,105,141,.20)}.tab.active .n{color:#d49a2e}.sidebar-foot{margin-top:auto;padding:20px 12px 0;border-top:1px solid rgba(20,86,122,.16);font-size:11px;line-height:1.7;color:rgba(21,63,92,.62)}
+.main{padding:34px;overflow:hidden}.panel{display:none;animation:fade .45s ease}.panel.active{display:block}@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.hero{position:relative;min-height:520px;border-radius:28px;overflow:hidden;box-shadow:var(--shadow);background:#123}.hero img{position:absolute;width:100%;height:100%;object-fit:cover}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,22,18,.78),rgba(8,22,18,.1) 58%,rgba(8,22,18,.02))}.hero-copy{position:relative;z-index:2;max-width:590px;padding:72px 64px;color:#fff}.kicker{font-size:12px;letter-spacing:.26em;color:#e5c98f;text-transform:uppercase}.hero h2{font-family:Georgia,"Songti SC",serif;font-weight:500;font-size:48px;line-height:1.16;margin:18px 0}.hero p{font-size:17px;line-height:1.9;color:rgba(255,255,255,.82)}.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.chip{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);backdrop-filter:blur(8px);padding:9px 13px;border-radius:999px;font-size:12px}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin:42px 6px 20px}.section-head h3{font-family:Georgia,"Songti SC",serif;font-size:31px;font-weight:500;margin:0}.section-head p{max-width:500px;margin:0;color:var(--muted);line-height:1.7;font-size:14px}
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:190px;gap:14px}.photo{border-radius:18px;overflow:hidden;box-shadow:0 10px 28px rgba(30,40,35,.10);position:relative}.photo img{width:100%;height:100%;object-fit:cover;transition:.5s}.photo:hover img{transform:scale(1.04)}.photo:nth-child(1){grid-column:span 7;grid-row:span 2}.photo:nth-child(2){grid-column:span 5}.photo:nth-child(3){grid-column:span 5}.photo:nth-child(4){grid-column:span 4}.photo:nth-child(5){grid-column:span 4}.photo:nth-child(6){grid-column:span 4}
+.intro{display:grid;grid-template-columns:1.05fr .95fr;gap:22px}.feature-hero{border-radius:26px;padding:48px;background:linear-gradient(145deg,#173c33,#25584b);color:#fff;min-height:360px;position:relative;overflow:hidden}.feature-hero:before{content:"";position:absolute;width:320px;height:320px;border:1px solid rgba(255,255,255,.13);border-radius:50%;right:-100px;top:-100px}.feature-hero h2,.edu-hero h2,.bay-hero h2{font-family:Georgia,"Songti SC",serif;font-size:42px;font-weight:500;margin:16px 0}.feature-hero p{color:rgba(255,255,255,.76);line-height:1.9}.statrow{display:flex;gap:26px;margin-top:38px}.stat b{display:block;font-family:Georgia,serif;font-size:30px;color:#e2c384}.stat span{font-size:12px;color:rgba(255,255,255,.56)}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.card{background:rgba(255,253,250,.86);border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:0 12px 34px rgba(26,42,35,.08);transition:.25s}.card:hover{transform:translateY(-4px);box-shadow:0 18px 42px rgba(26,42,35,.12)}.card .icon{width:44px;height:44px;border-radius:14px;background:#edf1ec;display:grid;place-items:center;font-size:22px}.card h4{font-family:Georgia,"Songti SC",serif;font-size:21px;margin:18px 0 10px}.card p{color:var(--muted);font-size:14px;line-height:1.75;margin:0}.card .meta{display:block;color:#9a7436;font-size:11px;letter-spacing:.12em;margin-top:18px}
+.edu-hero,.bay-hero{border-radius:28px;padding:58px;background:linear-gradient(120deg,#f5efe2,#fffdfa);border:1px solid var(--line);box-shadow:var(--shadow);position:relative;overflow:hidden}.edu-hero:after,.bay-hero:after{content:"EDUCATION";position:absolute;right:-25px;bottom:-28px;font:700 92px Georgia;color:rgba(22,53,45,.045)}.edu-hero p,.bay-hero p{max-width:680px;color:var(--muted);line-height:1.85;font-size:16px}.school-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}.school{background:#17372f;color:#fff;border-radius:24px;padding:34px;min-height:250px}.school:nth-child(2){background:#23364f}.school .seal{font:32px Georgia;border:1px solid rgba(255,255,255,.3);width:58px;height:58px;border-radius:50%;display:grid;place-items:center}.school h3{font-family:Georgia,"Songti SC",serif;font-size:28px;font-weight:500;margin:22px 0 8px}.school p{color:rgba(255,255,255,.7);line-height:1.8;font-size:14px}.school small{color:#d9be83}
+.destination-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}.dest{min-height:260px;border-radius:24px;padding:28px;color:white;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;background:#333}.dest:before{content:"";position:absolute;inset:0;background:var(--bg);opacity:.95}.dest:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.64),transparent 72%)}.dest>*{position:relative;z-index:2}.dest .num{font:13px Georgia;color:#ead29d}.dest h4{font-family:Georgia,"Songti SC",serif;font-size:23px;margin:8px 0}.dest p{font-size:13px;line-height:1.6;margin:0;color:rgba(255,255,255,.75)}
+
+.photo-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.place-card{position:relative;min-height:285px;border-radius:24px;overflow:hidden;box-shadow:0 16px 40px rgba(39,105,140,.14);background:#88cbe2}.place-card img,.school-photo img,.dest img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .55s ease}.place-card:hover img,.school-photo:hover img,.dest:hover img{transform:scale(1.045)}.place-card:after,.school-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,36,54,.80),rgba(6,36,54,.05) 68%)}.place-copy{position:absolute;z-index:2;left:24px;right:24px;bottom:22px;color:#fff}.place-copy h4{font-family:Georgia,"Songti SC",serif;font-size:24px;margin:0 0 7px}.place-copy p{margin:0;color:rgba(255,255,255,.82);font-size:13px;line-height:1.65}.place-copy .meta{display:inline-block;margin-top:10px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.16);backdrop-filter:blur(7px);font-size:11px}.school-grid{grid-template-columns:1fr 1fr}.school-photo{position:relative;min-height:360px;border-radius:24px;overflow:hidden;box-shadow:0 16px 42px rgba(35,85,115,.16)}.school-photo .school-copy{position:absolute;z-index:2;left:28px;right:28px;bottom:26px;color:#fff}.school-photo h3{font-family:Georgia,"Songti SC",serif;font-size:30px;margin:0 0 6px}.school-photo small{color:#ffe3a6;letter-spacing:.1em}.school-photo p{margin:10px 0 0;color:rgba(255,255,255,.82);line-height:1.7;font-size:14px}.destination-grid{grid-template-columns:repeat(3,1fr)}.dest{padding:0;min-height:300px}.dest:before{display:none}.dest .dest-copy{position:absolute;z-index:2;left:24px;right:24px;bottom:22px}.dest .num{position:absolute;z-index:2;top:20px;left:22px;background:rgba(255,255,255,.18);backdrop-filter:blur(7px);padding:7px 10px;border-radius:999px}.dest h4{margin:0 0 7px}.dest p{margin:0}
+.sources{margin:36px 4px 10px;padding-top:18px;border-top:1px solid var(--line);color:#7d8580;font-size:11px;line-height:1.8}.sources a{text-decoration:none;border-bottom:1px dotted #9aa39e}
+@media(max-width:900px){.photo-cards{grid-template-columns:1fr}.school-grid{grid-template-columns:1fr}.destination-grid{grid-template-columns:1fr 1fr}.app{grid-template-columns:1fr}.sidebar{position:relative;height:auto;padding:22px}.brand{padding-bottom:18px}.tabs{grid-template-columns:repeat(4,1fr);margin-top:18px}.tab{grid-template-columns:1fr;text-align:center;padding:12px 8px;font-size:12px}.tab .n{display:none}.sidebar-foot{display:none}.main{padding:18px}.hero{min-height:500px}.hero-copy{padding:52px 30px}.hero h2{font-size:38px}.intro,.school-grid{grid-template-columns:1fr}.destination-grid{grid-template-columns:1fr 1fr}.gallery{grid-auto-rows:150px}.photo:nth-child(n){grid-column:span 6;grid-row:span 1}.photo:nth-child(1){grid-column:span 12;grid-row:span 2}}
+@media(max-width:560px){.destination-grid,.photo-cards{grid-template-columns:1fr}.tabs{grid-template-columns:1fr 1fr}.destination-grid,.cards{grid-template-columns:1fr}.gallery{display:block}.photo{height:220px;margin-bottom:12px}.section-head{display:block}.section-head p{margin-top:10px}.hero h2,.feature-hero h2,.edu-hero h2,.bay-hero h2{font-size:33px}.main{padding:12px}}
+
+.source-link{display:inline-block;margin-top:10px;color:#B76E79;text-decoration:none;font-weight:600;border-bottom:1px solid rgba(183,110,121,.45)}.source-link:hover{color:#9F5D69;border-bottom-color:#9F5D69}
+</style>
+<style id="luxury-theme-override">
+:root{--champagne:#FCF9F4;--cream:#F8F1E7;--rose:#D4AF8A;--rose2:#C89B6D;--rose3:#B76E79;--text:#4A4542;}
+body{background:linear-gradient(180deg,#FCF9F4,#F8F1E7);color:var(--text);}
+.sidebar,.left-nav,.nav,.tabs,.tab-container{background:linear-gradient(180deg,#F8F1E7,#F2E5D4,#E8D3BE)!important;}
+.tab,.nav-item,.tab-button{color:#B76E79!important;}
+.tab.active,.nav-item.active,.tab-button.active{background:#fff!important;color:#B76E79!important;border-left:4px solid #D4AF8A!important;box-shadow:0 6px 18px rgba(183,110,121,.18);}
+h1,h2,h3,h4,.title,.section-title{background:linear-gradient(90deg,#D4AF8A,#C89B6D,#B76E79);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;}
+</style>
+<style id="final-luxury-theme">
+:root{--rose:#B76E79;--rose-light:#D8A7A8;--champagne:#E6C7A7;--cream:#FBF3E8;--ivory:#FFFDF8;--warm:#514642;}
+body{background:linear-gradient(135deg,#fffdf8 0%,#fbf3e8 55%,#f3dfd4 100%)!important;color:var(--warm)!important;}
+.sidebar{background:linear-gradient(180deg,#fff8ee 0%,#f5dfd0 48%,#dfb3ad 100%)!important;color:#6f4f4d!important;}
+.brand .eyebrow,.kicker{color:#b76e79!important}.brand p,.sidebar-foot{color:rgba(91,65,62,.72)!important}.brand{border-color:rgba(183,110,121,.22)!important}
+.tab{background:rgba(255,255,255,.3)!important;color:#8c5d5e!important}.tab .n{color:#b76e79!important}.tab:hover{background:rgba(255,255,255,.68)!important;color:#6e4548!important}.tab.active{background:#fffaf4!important;color:#8b565a!important;border-left:4px solid #c78f86!important;box-shadow:0 12px 30px rgba(164,102,102,.18)!important}
+h1,h2,h3,h4,.brand h1,.hero h2,.section-head h3,.place-copy h4,.school-photo h3,.dest h4{font-family:"Noto Serif SC","Songti SC","STSong",Georgia,serif!important;}
+.section-head h3,.edu-hero h2,.bay-hero h2,.feature-hero h2{color:#a86769!important}.card,.edu-hero,.bay-hero{background:rgba(255,252,246,.94)!important;border-color:rgba(183,110,121,.18)!important}
+.source-link{display:inline-block;margin-top:10px;color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.55);font-size:11px}
+.place-card,.school-photo,.dest{border:1px solid rgba(230,199,167,.65)}
+</style>
+<style id="edu-three-card-override">
+#edu .school-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+#edu .school-photo{display:block;}
+@media(max-width:1000px){#edu .school-grid{grid-template-columns:1fr;}}
+</style>
+<style id="home-gallery-v8-style">
+.home-lifestyle{margin:44px 0 10px}.home-lifestyle .section-kicker{font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;color:#b76e79;margin-bottom:8px}.home-lifestyle h2{font-size:clamp(1.7rem,3vw,2.7rem);margin:0 0 12px}.home-lifestyle .intro{max-width:900px;line-height:1.85;color:#5d514b;margin-bottom:24px}.home-gallery{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px}.home-card{grid-column:span 4;position:relative;overflow:hidden;border-radius:22px;background:#fff;border:1px solid rgba(212,175,138,.38);box-shadow:0 14px 34px rgba(94,68,54,.12);min-height:320px}.home-card.wide{grid-column:span 6}.home-card.hero-wide{grid-column:span 12;min-height:500px}.home-card img{width:100%;height:100%;min-height:320px;object-fit:cover;display:block;transition:transform .55s ease}.home-card.hero-wide img{min-height:500px}.home-card:hover img{transform:scale(1.035)}.home-card:after{content:"";position:absolute;inset:38% 0 0;background:linear-gradient(transparent,rgba(42,28,23,.86))}.home-caption{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:26px 24px 22px;color:#fff}.home-caption h3{margin:0 0 7px;background:none!important;-webkit-text-fill-color:#f4d9c4!important;color:#f4d9c4!important;font-size:1.28rem}.home-caption p{margin:0;line-height:1.58;font-size:.93rem;color:rgba(255,255,255,.9)}@media(max-width:900px){.home-card,.home-card.wide{grid-column:span 6}.home-card.hero-wide{min-height:390px}}@media(max-width:620px){.home-card,.home-card.wide,.home-card.hero-wide{grid-column:span 12;min-height:330px}.home-card img,.home-card.hero-wide img{min-height:330px}.home-gallery{gap:14px}}
+</style>
+<style id="signature-luxury-v10">
+:root{
+ --ink:#59433f;--muted:#75635e;--cream:#fffaf3;--paper:#fffdf9;
+ --rose:#b87570;--rose-deep:#92564f;--champagne:#d9b98c;--pearl:#f7eadb;
+ --line:rgba(184,117,112,.22);--shadow:0 22px 65px rgba(111,76,67,.15)
+}
+html{scroll-behavior:smooth} body{background:linear-gradient(135deg,#fffaf3 0%,#f8ecdf 48%,#f3dfd2 100%);color:var(--ink)}
+.sidebar{background:linear-gradient(180deg,#fff8ee 0%,#f4dfcf 48%,#d9aaa2 100%)!important;color:var(--rose-deep)!important;border-right:1px solid rgba(146,86,79,.16)}
+.brand{border-color:rgba(146,86,79,.18)!important}.brand .eyebrow{color:var(--rose)!important}.brand h1{color:var(--rose-deep)!important}.brand p,.sidebar-foot{color:rgba(89,67,63,.72)!important}.sidebar-foot{border-color:rgba(146,86,79,.18)!important}
+.tabs{gap:12px}.tab{background:rgba(255,250,243,.48)!important;color:var(--rose-deep)!important;border:1px solid rgba(184,117,112,.18)!important;font-weight:600;line-height:1.35}.tab *{color:inherit!important}.tab .n{color:var(--champagne)!important}.tab:hover{background:rgba(255,255,255,.84)!important;color:#7f4d48!important}.tab.active{background:linear-gradient(135deg,#fffdf9,#f9eadc)!important;color:var(--rose-deep)!important;border-color:rgba(184,117,112,.42)!important;box-shadow:0 12px 32px rgba(146,86,79,.16)!important}.tab.active .n{color:var(--rose)!important}
+.main{background:transparent}.hero,.feature-hero,.edu-hero,.bay-hero,.place-card,.school-photo,.dest,.photo{border:1px solid rgba(217,185,140,.55);box-shadow:var(--shadow)}
+.feature-hero{background:linear-gradient(145deg,#b87570,#d9b98c)!important}.edu-hero,.bay-hero{background:linear-gradient(125deg,#fffaf3,#f7e8dc)!important}
+.kicker{color:#ffe8bd!important}.section-head h3,.card h4{color:var(--rose-deep)}.section-head p,.card p,.edu-hero p,.bay-hero p{color:var(--muted)}
+.card{background:rgba(255,253,249,.9);border-color:var(--line)}.card .icon{background:#f4dfd2}.card .meta{color:var(--rose)}
+.place-card:after,.school-photo:after{background:linear-gradient(0deg,rgba(72,43,42,.88),rgba(72,43,42,.10) 72%)!important}.dest:after{background:linear-gradient(0deg,rgba(72,43,42,.78),transparent 72%)!important}
+.place-copy,.place-copy h4,.place-copy p,.place-copy a,.place-copy span,.school-copy,.school-copy h3,.school-copy p,.school-copy small,.dest-copy,.dest-copy h4,.dest-copy p,.dest-copy a{color:#fff9ef!important;text-shadow:0 2px 8px rgba(0,0,0,.36)}
+.source-link{display:inline-flex!important;margin-top:10px;padding:7px 11px;border-radius:999px;background:rgba(255,250,243,.18);border:1px solid rgba(255,245,225,.42);color:#fff6e7!important;text-decoration:none!important;font-size:11px;backdrop-filter:blur(8px)}.source-link:hover{background:rgba(255,250,243,.32)}
+.place-copy .meta{color:#fff6e7!important;background:rgba(184,117,112,.34)!important;border:1px solid rgba(255,245,225,.26)}
+/* Remove any dark/black labels from all shells in the club-and-shopping tab */
+#club .place-card *,#club .feature-hero *,#club .card *{--local-text:#fff8ee}#club .place-card h4,#club .place-card p,#club .place-card a,#club .place-card span{color:#fff8ee!important}#club .place-card a:visited{color:#fff8ee!important}
+h1,h2,h3,h4{font-family:"Noto Serif SC","Songti SC",Georgia,serif}.brand h1,.hero h2,.feature-hero h2,.edu-hero h2,.bay-hero h2,.section-head h3{letter-spacing:.02em}
+.photo img,.place-card img,.school-photo img,.dest img{cursor:zoom-in}.lightbox{position:fixed;inset:0;background:rgba(35,20,20,.93);z-index:9999;display:none;align-items:center;justify-content:center;padding:30px}.lightbox.open{display:flex}.lightbox img{max-width:94vw;max-height:90vh;object-fit:contain;border-radius:18px;border:1px solid rgba(255,235,210,.45);box-shadow:0 30px 90px rgba(0,0,0,.5)}.lightbox button{position:absolute;right:24px;top:18px;border:0;background:transparent;color:#fff4e6;font-size:38px;cursor:pointer}
+@media(max-width:900px){.tab{font-size:11px!important}.sidebar{background:linear-gradient(135deg,#fff8ee,#e9c7ba)!important}}
+</style>
+<style id="expanded-home-gallery-v11">
+#home .home-gallery{grid-auto-flow:dense;align-items:stretch}
+#home .home-card.large{grid-column:span 8}
+#home .home-card img{cursor:zoom-in}
+#home .home-card.sunset-card{min-height:520px}
+#home .home-card.sunset-card img{min-height:520px}
+@media(max-width:900px){
+  #home .home-card.large{grid-column:span 6}
+  #home .home-card.sunset-card,#home .home-card.sunset-card img{min-height:390px}
+}
+@media(max-width:620px){
+  #home .home-card.large{grid-column:span 12}
+  #home .home-card.sunset-card,#home .home-card.sunset-card img{min-height:330px}
+}
+</style>
+<style id="background-music-v1-style">
+/* Discreet background-music control; the YouTube player stays off-screen. */
+.background-music-player-shell{
+  position:fixed;
+  left:-10000px;
+  top:-10000px;
+  width:240px;
+  height:200px;
+  overflow:hidden;
+  opacity:.001;
+  pointer-events:none;
+  z-index:-1;
+}
+.background-music-player-shell iframe{width:240px;height:200px;border:0}
+.music-toggle{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:9000;
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  min-height:46px;
+  padding:11px 15px;
+  border:1px solid rgba(217,185,140,.72);
+  border-radius:999px;
+  background:rgba(255,250,243,.92);
+  color:#92564f;
+  box-shadow:0 12px 34px rgba(91,58,53,.19);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  font:600 12px/1.2 "Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  letter-spacing:.04em;
+  cursor:pointer;
+  transition:transform .2s ease,background .2s ease,box-shadow .2s ease;
+}
+.music-toggle:hover{transform:translateY(-2px);background:#fffdf9;box-shadow:0 16px 40px rgba(91,58,53,.23)}
+.music-toggle:focus-visible{outline:3px solid rgba(184,117,112,.28);outline-offset:3px}
+.music-toggle__icon{
+  width:25px;
+  height:25px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:linear-gradient(135deg,#d9b98c,#b87570);
+  color:#fffaf3;
+  font:700 15px/1 Georgia,serif;
+  box-shadow:0 4px 12px rgba(146,86,79,.2);
+}
+.music-toggle__state{color:#b87570}
+.music-toggle.is-playing .music-toggle__icon{animation:musicPulse 1.8s ease-in-out infinite}
+@keyframes musicPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.09)}}
+@media(max-width:620px){
+  .music-toggle{right:12px;bottom:12px;min-height:42px;padding:9px 12px}
+  .music-toggle__label{display:none}
+}
+@media(prefers-reduced-motion:reduce){.music-toggle,.music-toggle.is-playing .music-toggle__icon{transition:none;animation:none}}
+</style>
+
+<style id="editorial-narrative-v1">
+.editorial-story{margin:42px 0 22px;padding:42px;border-radius:28px;background:rgba(255,253,249,.94);border:1px solid rgba(184,117,112,.22);box-shadow:0 18px 48px rgba(111,76,67,.12)}
+.editorial-story .story-kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#b87570;font-weight:700;margin-bottom:10px}
+.editorial-story h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.18;margin:0 0 16px;color:#92564f!important;background:none!important;-webkit-text-fill-color:#92564f!important}
+.editorial-story .lead{font-family:"Noto Serif SC","Songti SC",Georgia,serif;font-size:1.16rem;line-height:1.9;color:#59433f;margin:0 0 20px}
+.editorial-story .value-banner{margin:24px 0 30px;padding:18px 20px;border-left:4px solid #d9b98c;background:#fff8ee;border-radius:12px;font-weight:700;line-height:1.7;color:#7b554d}
+.story-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.story-block{padding:22px;border:1px solid rgba(184,117,112,.16);border-radius:18px;background:#fffdf9}
+.story-block.wide{grid-column:1/-1}
+.story-block h3{margin:0 0 9px;font-size:1.28rem;color:#92564f!important;background:none!important;-webkit-text-fill-color:#92564f!important}
+.story-block p{margin:0;color:#6f5d57;line-height:1.82;font-size:.96rem}
+.story-close{margin:28px 0 0;padding-top:24px;border-top:1px solid rgba(184,117,112,.2);font-family:"Noto Serif SC","Songti SC",Georgia,serif;font-size:1.12rem;line-height:1.9;color:#59433f}
+@media(max-width:760px){.editorial-story{padding:28px 22px}.story-grid{grid-template-columns:1fr}.story-block.wide{grid-column:auto}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+<div class="brand"><div class="eyebrow">SAN FRANCISCO BAY AREA</div><h1>灣區臻享生活</h1><p>山景私邸 · 頂級教育 · 國際生活圈</p></div>
+<nav class="tabs">
+<button class="tab active" data-tab="home"><span class="n">01</span><span>臻藏府邸</span></button>
+<button class="tab" data-tab="club"><span class="n">02</span><span>尊享會所與品質生活</span></button>
+<button class="tab" data-tab="edu"><span class="n">03</span><span>世界級教育 · 矽谷創新</span></button>
+<button class="tab" data-tab="bay"><span class="n">04</span><span>世界級休閒生活</span></button>
+</nav>
+<div class="sidebar-foot">為重視隱私、教育與全球資產配置的家庭，呈現一處兼具自然、便利與長期價值的灣區生活基地。</div>
+</aside>
+<main class="main">
+<section class="panel active" id="home">
+<div class="hero"><img alt="旧金山湾景观" src="image_01.jpg"/><div class="hero-copy"><div class="kicker">STONEBRAE · EAST BAY</div><h2>俯瞰舊金山灣的<br/>靜謐山景私邸</h2><p>居於開闊山脊之上，晨光、灣景與綠意成為每日生活背景。現代開放式空間、優雅內裝與成熟社區，共同構成適合家族長期居住與度假的高品質灣區據點。</p><div class="chips"><span class="chip">全景灣景</span><span class="chip">高爾夫社區</span><span class="chip">開放式廚房</span><span class="chip">私密寧靜</span></div></div></div><section class="editorial-story"><div class="story-kicker">130 ARUNDEL DRIVE · STONEBRAE</div><h2>走進一個現代、當代、真正拎包入住的奢華世界</h2><p class="lead">130 Arundel Drive 的外觀低調而從容，自然融入 Stonebrae 寧靜的山景環境；然而推門而入，空間氣質驟然轉換。經典義大利大理石與現代簡潔線條、雕塑感細節、智慧科技和高端家具在此交融，形成溫暖而精緻的 Transitional 風格。</p><div class="value-banner">全屋在設計裝修、高端家具、智慧系統、影音設備、太陽能、Tesla Powerwall 與 EV 充電等方面累計投入<strong>超過 35 萬美元</strong>。</div><div class="story-grid"><div class="story-block wide"><h3>令人驚豔的第一步</h3><p>進入大門，首先迎來的是挑高大門廳，訂製閃爍塗料在天花板營造出低調的「星空」效果。鋼琴廳與正式餐廳環繞中央庭院自然相連，配有 Restoration Hardware 櫃體、Yamaha 數位小型三角鋼琴、現代家具、大理石桌面與雕塑感燈具。</p></div><div class="story-block"><h3>約 10 萬美元的雕塑感廚房</h3><p>訂製 Cambria 瀑布式中島如同一件大型雕塑，視覺上與升級工程木地板無縫銜接。雙酒櫃嵌入中島。Swiss Coffee 暖米色櫥櫃採用手工 felt antique 仿古處理，在線條與凹槽處加入略深色細節，再以玫瑰金五金收束整體色調。Arabesque 阿拉伯式吊燈與藝術磁磚 backsplash 相互呼應，並配有現代義大利水槽及 Brizo 觸控水龍頭。</p></div><div class="story-block"><h3>義大利大理石與設計師衛浴</h3><p>主衛、Jack-and-Jill 兒童衛浴及客衛均以義大利大理石升級。客用化妝室則採用更現代的設計語言，以 Porcelanosa 磁磚搭配懸浮式 cantilever 洗手台，單項改造約 2 萬美元。</p></div><div class="story-block"><h3>全屋家具與影音系統隨房</h3><p>高端家具與影音設備整體隨房，包括 Bang &amp; Olufsen 音響、7.1 環繞聲、77 吋 LG OLED、65 吋 LG OLED、75 吋 LG 電視及 42 吋 Sony 遊戲電視。現代、安靜、自動化的 LG 洗衣機與烘乾機亦包含在內。</p></div><div class="story-block"><h3>主臥套房與第五套房潛力</h3><p>主臥為完整家具配置，並設獨立男女主人步入式衣帽間。上樓第一眼即是寬敞 loft，目前作為書房、遊戲室、圖書館及家庭影音空間，一整面牆為 Restoration Hardware 風格書架，另外兩面配有 Crate &amp; Barrel 訂製櫃體與電視架。該 loft 已預留管線，可未來改造成第五套房。</p></div><div class="story-block"><h3>無處不在、卻不喧賓奪主的智慧科技</h3><p>指紋數位門鎖、Ring 安防、動作偵測、視訊監控、遠端控制、Nest 溫控、語音與動作感應照明、Wi-Fi 灌溉及語音控制熱水循環均已整合。動作感應循環泵配合電動即熱式熱水系統，使日常使用更高效。</p></div><div class="story-block"><h3>太陽能支持的能源獨立性</h3><p>約 5.76 kW 太陽能系統、兩台 Tesla Powerwall 與 Tesla EV 充電系統合計約 5 萬美元。太陽能可幫助覆蓋家庭用電、電熱水與 EV 充電，電池儲能則為夜間用電及停電期間提供額外韌性。</p></div><div class="story-block"><h3>中央庭院、果園與風水水景</h3><p>配有休閒家具的中央庭院以無煙囪壁爐為視覺中心，室內另有第二座無煙囪壁爐。後院約 0.27 英畝，具備泳池尺度，擁有精心維護的果園、Quartzite 石英岩石板高台、遮陽設施，以及遵循風水元素設計、可語音控制的噴泉。</p></div><div class="story-block"><h3>在灣景落日中結束一天</h3><p>二樓朝西走廊在傍晚捕捉溫暖夕陽，並可眺望舊金山灣的一線景致。走廊外的小陽台，是清晨喝咖啡或傍晚靜看天空由金色轉為琥珀色的理想角落。</p></div></div><p class="story-close">外觀低調優雅，內部卻是完全不同的現代世界。帶上行李即可入住，用陽光為車輛充電，從廚房雙酒櫃取出一瓶酒，在陽台上看舊金山灣的夕陽。房子已經完成，下一章只等新的主人開啟。</p></section>
+<div class="section-head"><h3>從景觀到日常，皆有分寸</h3><p>明亮通透的共享空間以柔和中性色貫穿，兼顧家庭互動、私人休憩與正式宴請。</p></div>
+<div class="gallery"><div class="photo"><img alt="私邸空间" src="image_02.jpg"/></div><div class="photo"><img alt="私邸空间" src="image_03.jpg"/></div><div class="photo"><img alt="私邸空间" src="image_04.jpg"/></div><div class="photo"><img alt="私邸空间" src="image_05.jpg"/></div><div class="photo"><img alt="私邸空间" src="image_06.jpg"/></div><div class="photo"><img alt="私邸空间" src="image_07.jpg"/></div></div>
+<div class="home-lifestyle"><div class="section-kicker">GARDEN · ORCHARD · INTERIORS</div><h2>花園果園與雅緻生活</h2><p class="intro">私邸庭院經過多年精心營造，將開闊草坪、石板露臺、四季花園與豐盛果園融為一體。春賞花、夏納涼、秋採果，室內外空間自然銜接，呈現健康、從容且適合家庭共享與社交待客的灣區生活方式。</p><div class="home-gallery"><figure class="home-card"><img alt="四季玫瑰花园" decoding="async" loading="lazy" src="image_08.jpg" style="object-position:center 44%"/><figcaption class="home-caption"><h3>四季玫瑰花園</h3><p>庭院玫瑰在灣區陽光下層疊綻放，為私邸增添柔美而精緻的自然氣息。</p></figcaption></figure><figure class="home-card"><img alt="伊甸玫瑰盛放" decoding="async" loading="lazy" src="image_09.jpg" style="object-position:center 42%"/><figcaption class="home-caption"><h3>伊甸玫瑰盛放</h3><p>藤本玫瑰沿庭院層疊盛放，在成熟綠意與木質圍欄之間營造浪漫私密的花園景致。</p></figcaption></figure><figure class="home-card"><img alt="春日蜜桃" decoding="async" loading="lazy" src="image_10.jpg" style="object-position:center 48%"/><figcaption class="home-caption"><h3>夏日蜜桃</h3><p>果樹新枝上的幼桃，記錄私家果園從春華到秋實的四季變化。</p></figcaption></figure><figure class="home-card wide hero-wide"><img alt="阳光草坪与山景花园" decoding="async" loading="lazy" src="image_11.jpg" style="object-position:center 52%"/><figcaption class="home-caption"><h3>陽光草坪與山景花園</h3><p>開闊草坪、層次園景與湛藍天空，共同營造私密而從容的加州戶外生活。</p></figcaption></figure><figure class="home-card wide"><img alt="石板露台与户外庭院" decoding="async" loading="lazy" src="image_12.jpg" style="object-position:center 54%"/><figcaption class="home-caption"><h3>石板露臺與戶外庭院</h3><p>寬闊石板露臺連接草坪與花園，適合家庭聚會、下午茶與戶外晚宴。</p></figcaption></figure><figure class="home-card wide"><img alt="户外休闲会客区" decoding="async" loading="lazy" src="image_13.jpg" style="object-position:center 52%"/><figcaption class="home-caption"><h3>戶外休閒會客區</h3><p>遮陽傘、環形沙發與景觀花壇構成舒適私密的戶外共享空間。</p></figcaption></figure><figure class="home-card"><img alt="富士苹果成熟季" decoding="async" loading="lazy" src="image_14.jpg" style="object-position:center 45%"/><figcaption class="home-caption"><h3>富士蘋果成熟季</h3><p>枝頭碩果累累，展現庭院果樹在灣區溫暖氣候中的豐盛收穫。</p></figcaption></figure><figure class="home-card"><img alt="私家果园丰收" decoding="async" loading="lazy" src="image_15.jpg" style="object-position:center 50%"/><figcaption class="home-caption"><h3>私家果園豐收</h3><p>滿箱鮮摘蘋果，將健康、自然與家庭共享的生活方式帶入日常。</p></figcaption></figure><figure class="home-card"><img alt="庭院葡萄藤" decoding="async" loading="lazy" src="image_16.jpg" style="object-position:center 43%"/><figcaption class="home-caption"><h3>庭院葡萄藤</h3><p>陽光下成串成熟的葡萄，為庭院增添季節變化，也讓採摘成為家庭生活的一部分。</p></figcaption></figure><figure class="home-card"><img alt="亚洲梨丰收" decoding="async" loading="lazy" src="image_17.jpg" style="object-position:center 50%"/><figcaption class="home-caption"><h3>亞洲梨豐收</h3><p>一季收成匯聚成箱，飽滿亞洲梨體現成熟果園的豐產與日常可享的自然饋贈。</p></figcaption></figure><figure class="home-card large"><img alt="开放式宴客与音乐厅" decoding="async" loading="lazy" src="image_18.jpg" style="object-position:center 52%"/><figcaption class="home-caption"><h3>開放式宴客與音樂廳</h3><p>餐敘空間與三角鋼琴自然相連，兼顧正式待客、家庭聚會與日常藝術氛圍。</p></figcaption></figure><figure class="home-card"><img alt="独立正式餐厅" decoding="async" loading="lazy" src="image_19.jpg" style="object-position:center 48%"/><figcaption class="home-caption"><h3>獨立正式餐廳</h3><p>大面積採光、柔和中性色與簡潔陳設，為節慶聚餐與正式宴請提供優雅背景。</p></figcaption></figure><figure class="home-card"><img alt="顶级影音娱乐墙：Bang &amp; Olufsen 音响、7.1 身历声频道、77 英寸 LG OLED 超薄电视、智能声光红外线语音控制与太阳能板充电桩产电" decoding="async" loading="lazy" src="image_20.png" style="object-position:center center"/></figure><figure class="home-card"><img alt="精致客用盥洗室" decoding="async" loading="lazy" src="image_21.jpg" style="object-position:center 50%"/><figcaption class="home-caption"><h3>精緻客用盥洗室</h3><p>立體紋理牆面、溫潤檯面與金屬鏡框，呈現細節考究的室內設計。</p></figcaption></figure><figure class="home-card wide"><img alt="明亮舒适卧室" decoding="async" loading="lazy" src="image_22.jpg" style="object-position:center 50%"/><figcaption class="home-caption"><h3>明亮舒適臥室</h3><p>雙面採光與柔和配色，為家人和賓客營造安靜、明亮的休憩空間。</p></figcaption></figure><figure class="home-card wide"><img alt="静谧主卧套房" decoding="async" loading="lazy" src="image_23.jpg" style="object-position:center 48%"/><figcaption class="home-caption"><h3>靜謐主臥套房</h3><p>寬敞尺度、柔軟織物與雙側採光共同營造從容安靜、適合長期居住的私屬空間。</p></figcaption></figure><figure class="home-card wide hero-wide sunset-card"><img alt="私邸前的湾区落日" decoding="async" loading="lazy" src="image_24.jpg" style="object-position:center 48%"/><figcaption class="home-caption"><h3>私邸前的灣區落日</h3><p>夕陽越過山脊與高爾夫球場，將層疊灣景染成金橙色，成為每日可享的自然禮遇。</p></figcaption></figure></div></div></section>
+<section class="panel" id="club">
+<div class="intro" style="margin-bottom:22px">
+<div class="feature-hero" style="background:linear-gradient(145deg,#1689ba,#64c4de)"><div class="kicker">PRIVATE CLUB &amp; DAILY CONVENIENCE</div><h2>山頂會所、國際採購，<br/>構成輕鬆日常</h2><p>從 Stonebrae 私人會所，到 Castro Valley、Dublin、Pleasanton 與 San Ramon 的成熟商業，日常生活可在自然、運動、亞洲餐飲與高品質購物之間無縫切換。</p></div>
+<div class="place-card"><img alt="Stonebrae 高尔夫会所" src="image_25.png"/><div class="place-copy"><h4>Stonebrae 私人會所</h4><p>山頂高爾夫、會所餐飲、泳池、健身與家庭社交。</p><a class="source-link" href="https://breezit.com/stonebrae-country-club?srsltid=AfmBOorzr6EXX2DgmsWyfizyOm4MVKRd5jc1e7xU_DLmXdbZSilQa5RC" rel="noopener" target="_blank">查看 Stonebrae 會所實景</a><span class="meta">運動 · 私享 · 灣景</span></div></div>
+</div>
+<div class="photo-cards">
+<div class="place-card"><div class="place-copy"><h4>Castro Valley · 精品生活與美食中心</h4><p>Castro Valley Marketplace 匯聚精品餐飲、天然有機食品、葡萄酒、烘焙與社區活動，距離 BART 僅數個街區。</p><a class="source-link" href="https://www.mercurynews.com/2021/07/19/3-amazing-new-bay-area-food-halls-from-los-altos-to-castro-valley/" rel="noopener" target="_blank">查看 Castro Valley Marketplace</a><span class="meta">美食 · 社區 · 便捷交通</span></div></div>
+<div class="place-card"><img alt="Dublin H Mart" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/BART%20train%20west%20of%20Dublin%20Pleasanton%20station%2C%20May%202018.JPG?width=1600"/><div class="place-copy"><h4>Dublin · H Mart</h4><p>大型亞洲精品超市與美食選擇，便於採購海鮮、生鮮及熟悉的亞洲食材。</p><span class="meta">亞洲精品採購</span></div></div>
+<div class="place-card"><div class="place-copy"><h4>Pacific Pearl · 亞洲精品生活中心</h4><p>Pleasanton 的亞洲生活方式地標，匯聚 99 Ranch Market、亞洲餐飲、甜品與家庭聚會場景。</p><a class="source-link" href="https://www.mercurynews.com/2018/07/19/asian-focused-eateries-grocer-spices-up-tri-valleys-latest-shopping-center/" rel="noopener" target="_blank">查看 Pacific Pearl 實景</a><span class="meta">亞洲精品採購 · 餐飲 · 社交</span></div></div>
+<div class="place-card"><img alt="Bishop Ranch" src="image_26.png"/><div class="place-copy"><h4>City Center Bishop Ranch · 東灣高端商務與生活中心</h4><p>現代商務園區與 City Center 高端商業相連，適合商務會面、精品餐飲與週末休閒。</p><span class="meta">商務 · 品牌 · 都市感</span></div></div>
+</div>
+<div class="sources">本頁配圖均對應所述灣區地點或項目；零售設施與商戶可能調整，請以各場所官方最新資訊為準。</div>
+</section>
+<section class="panel" id="edu">
+<div class="edu-hero"><div class="kicker" style="color:#1678a8">WORLD-CLASS EDUCATION &amp; SILICON VALLEY</div><h2>世界級教育資源 · 矽谷創新生態</h2><p>史丹佛與加州大學柏克萊分校構成灣區教育與創新生態的雙核心，並與矽谷的科技企業、創業資本和全球人才網絡緊密相連。</p></div>
+<div class="school-grid">
+<div class="school-photo"><img alt="斯坦福大学主庭院拱廊" src="image_27.png"/><div class="school-copy"><h3>史丹佛大學</h3><small>STANFORD UNIVERSITY</small><p>矽谷創新生態的重要源頭，兼具頂尖教育、科研與創業資源。<br/><a class="source-link" href="https://www.scmp.com/magazines/style/news-trends/article/3087747/its-home-tech-giants-facebook-apple-and-google-where-us" rel="noopener" target="_blank">了解矽谷科技與生活生態</a></p></div></div>
+<div class="school-photo"><img alt="加州大学伯克利分校 Sather Gate 实景" src="image_28.png"/><div class="school-copy"><h3>加州大學柏克萊分校</h3><small>UC BERKELEY</small><p>以標誌性的 Sather Gate 為門戶，連接世界級學術、科研、創業與全球校友網絡。</p></div></div>
+<a class="school-photo" href="https://www.scmp.com/magazines/style/news-trends/article/3087747/its-home-tech-giants-facebook-apple-and-google-where-us" rel="noopener" style="text-decoration:none;color:inherit" target="_blank"><img alt="硅谷 Apple Park 总部环形建筑航拍" src="image_29.png"/><div class="school-copy"><h3>矽谷 · 全球創新引擎</h3><small>SILICON VALLEY</small><p>全球科技企業、創業資本與國際人才高度匯聚。</p></div></a>
+</div>
+</section>
+<section class="panel" id="bay">
+<div class="bay-hero"><div class="kicker" style="color:#1678a8">A LIFE WITHOUT COMPROMISE</div><h2>晴朗海灣與多元目的地，<br/>共同定義灣區生活</h2><p>從葡萄酒鄉、海濱小鎮到國際都會與精品購物，灣區的獨特之處，在於每個週末都能切換一種截然不同的生活場景。</p></div>
+<div class="destination-grid">
+<div class="dest"><img alt="纳帕葡萄酒乡" src="image_30.png"/><span class="num">01</span><div class="dest-copy"><h4>納帕葡萄酒鄉</h4><p>連綿葡萄園、名莊品鑑、米其林餐飲與精緻週末度假。</p><a class="source-link" href="https://graylineofsanfrancisco.com/tips-wine-tasting-napa-valley/" rel="noopener" target="_blank">探索納帕葡萄酒體驗</a></div></div>
+<div class="dest"><img alt="索萨利托" src="image_31.png"/><span class="num">02</span><div class="dest-copy"><h4>索薩利托</h4><p>濱海藝術小鎮、遊艇碼頭與金門景觀。</p></div></div>
+<div class="dest"><img alt="旧金山" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/San%20Francisco%20from%20the%20Marin%20Headlands%20in%20March%202019.jpg?width=1600"/><span class="num">03</span><div class="dest-copy"><h4>舊金山</h4><p>全球文化、金融、藝術與高端餐飲中心。</p></div></div>
+<div class="dest"><img alt="蒙特雷" src="image_32.png"/><span class="num">04</span><div class="dest-copy"><h4>蒙特雷半島 · 17-Mile Drive</h4><p>Lone Cypress、Pebble Beach 與壯闊太平洋海岸，呈現北加州經典濱海度假生活。</p></div></div>
+<div class="dest"><img alt="卡梅尔" src="image_33.png"/><span class="num">05</span><div class="dest-copy"><h4>卡梅爾</h4><p>精品小鎮、藝術畫廊、白沙海灘與優雅海岸生活。</p><a class="source-link" href="https://www.seemonterey.com/destinations/carmel-by-the-sea/" rel="noopener" target="_blank">探索 Carmel-by-the-Sea</a></div></div>
+<div class="dest"><img alt="Walnut Creek" src="https://assets.macerichepicenter.com/FileManager/Property/LongTermLeasing/BroadwayPlaza/BroadwayPlaza_1920x800.jpg"/><span class="num">06</span><div class="dest-copy"><h4>Walnut Creek · Broadway Plaza</h4><p>東灣高端開放式購物地標，匯聚精品零售、餐飲與舒適都市生活。</p><a class="source-link" href="https://quikspace.macerich.com/commercial-property/us/ca/walnut-creek/broadway-plaza-2/" rel="noopener" target="_blank">查看 Broadway Plaza</a></div></div>
+<div class="dest"><img alt="旧金山奥特莱斯" src="image_34.png"/><span class="num">07</span><div class="dest-copy"><h4>San Francisco Premium Outlets · Livermore</h4><p>匯聚 Brunello Cucinelli 等國際精品品牌，兼顧高端選購與輕鬆家庭購物。</p><a class="source-link" href="https://www.premiumoutlets.com/outlet/san-francisco/stores/brunello-cucinelli" rel="noopener" target="_blank">查看 Brunello Cucinelli</a></div></div>
+</div>
+</section>
+</main></div>
+<script>
+const tabs=[...document.querySelectorAll('.tab')], panels=[...document.querySelectorAll('.panel')];
+tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.classList.remove('active'));panels.forEach(x=>x.classList.remove('active'));t.classList.add('active');document.getElementById(t.dataset.tab).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}));
+</script>
+<div aria-hidden="true" class="lightbox" id="lightbox"><button aria-label="关闭">×</button><img alt="放大图片"/></div><script>
+(()=>{const box=document.getElementById('lightbox'),view=box.querySelector('img');document.querySelectorAll('.photo img,.place-card img,.school-photo img,.dest img,.home-card img').forEach(img=>img.addEventListener('click',()=>{view.src=img.src;box.classList.add('open');box.setAttribute('aria-hidden','false')}));const close=()=>{box.classList.remove('open');box.setAttribute('aria-hidden','true');view.removeAttribute('src')};box.querySelector('button').onclick=close;box.addEventListener('click',e=>{if(e.target===box)close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()})})();
+</script>
+<div aria-hidden="true" class="background-music-player-shell">
+<iframe allow="autoplay; encrypted-media" id="background-music-player" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/FM1A2H8AsJ4?enablejsapi=1&amp;autoplay=1&amp;loop=1&amp;playlist=FM1A2H8AsJ4&amp;controls=0&amp;disablekb=1&amp;fs=0&amp;playsinline=1&amp;rel=0" tabindex="-1" title="Background music"></iframe>
+</div>
+<button aria-label="播放背景音乐" aria-pressed="false" class="music-toggle" id="music-toggle" type="button">
+<span aria-hidden="true" class="music-toggle__icon">♪</span>
+<span class="music-toggle__label">背景音樂</span>
+<span class="music-toggle__state">播放</span>
+</button>
+<script id="background-music-v1">
+(()=>{
+  const VIDEO_ID='FM1A2H8AsJ4';
+  const button=document.getElementById('music-toggle');
+  const stateLabel=button.querySelector('.music-toggle__state');
+  let player=null;
+  let ready=false;
+  let userPaused=false;
+
+  const setPlaying=(playing)=>{
+    button.classList.toggle('is-playing',playing);
+    button.setAttribute('aria-pressed',String(playing));
+    button.setAttribute('aria-label',playing?'暂停背景音乐':'播放背景音乐');
+    stateLabel.textContent=playing?'暂停':'播放';
+  };
+
+  const play=()=>{
+    if(!ready||!player||typeof player.playVideo!=='function') return;
+    userPaused=false;
+    try{player.setVolume(32);player.playVideo()}catch(_){/* Browser may still require a tap. */}
+  };
+
+  const pause=()=>{
+    if(!ready||!player||typeof player.pauseVideo!=='function') return;
+    userPaused=true;
+    try{player.pauseVideo()}catch(_){ }
+  };
+
+  button.addEventListener('click',()=>{
+    if(!ready){userPaused=false;return;}
+    const playing=player.getPlayerState()===YT.PlayerState.PLAYING;
+    playing?pause():play();
+  });
+
+  const startOnFirstInteraction=(event)=>{
+    if(event.target&&event.target.closest&&event.target.closest('#music-toggle')) return;
+    if(!userPaused) play();
+  };
+  document.addEventListener('pointerdown',startOnFirstInteraction,{once:true,passive:true});
+  document.addEventListener('keydown',startOnFirstInteraction,{once:true});
+
+  const previousReady=window.onYouTubeIframeAPIReady;
+  window.onYouTubeIframeAPIReady=()=>{
+    if(typeof previousReady==='function') previousReady();
+    player=new YT.Player('background-music-player',{
+      events:{
+        onReady:(event)=>{
+          ready=true;
+          event.target.setVolume(32);
+          play();
+          window.setTimeout(()=>setPlaying(event.target.getPlayerState()===YT.PlayerState.PLAYING),900);
+        },
+        onStateChange:(event)=>{
+          const playing=event.data===YT.PlayerState.PLAYING;
+          setPlaying(playing);
+          if(event.data===YT.PlayerState.ENDED&&!userPaused){
+            try{event.target.seekTo(0);event.target.playVideo()}catch(_){ }
+          }
+        },
+        onError:()=>setPlaying(false)
+      }
+    });
+  };
+
+  if(!document.querySelector('script[data-youtube-iframe-api]')){
+    const api=document.createElement('script');
+    api.src='https://www.youtube.com/iframe_api';
+    api.async=true;
+    api.dataset.youtubeIframeApi='true';
+    document.head.appendChild(api);
+  }
+})();
+</script>
+</body></html>
