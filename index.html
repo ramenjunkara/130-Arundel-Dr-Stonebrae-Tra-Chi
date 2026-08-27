@@ -228,45 +228,85 @@ tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.classList.remo
 (()=>{const box=document.getElementById('lightbox'),view=box.querySelector('img');document.querySelectorAll('.photo img,.place-card img,.school-photo img,.dest img,.home-card img').forEach(img=>img.addEventListener('click',()=>{view.src=img.src;box.classList.add('open');box.setAttribute('aria-hidden','false')}));const close=()=>{box.classList.remove('open');box.setAttribute('aria-hidden','true');view.removeAttribute('src')};box.querySelector('button').onclick=close;box.addEventListener('click',e=>{if(e.target===box)close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()})})();
 </script>
 <div aria-hidden="true" class="background-music-player-shell">
-<audio id="background-music-player" preload="auto" loop>
-  <source src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Jazz_at_the_park.ogg" type="audio/ogg"/>
-</audio>
+<iframe allow="autoplay; encrypted-media" id="background-music-player" referrerpolicy="strict-origin-when-cross-origin" tabindex="-1" title="Background music"></iframe>
 </div>
-<button aria-label="播放背景音樂" aria-pressed="false" class="music-toggle" id="music-toggle" type="button">
+<button aria-label="Play background music" aria-pressed="false" class="music-toggle" id="music-toggle" type="button">
 <span aria-hidden="true" class="music-toggle__icon">♪</span>
-<span class="music-toggle__label">背景音樂</span>
+<span class="music-toggle__label">Background Music</span>
 <span class="music-toggle__state">播放</span>
 </button>
-<script id="background-music-v2">
+<script id="background-music-v4">
 (()=>{
-  const audio=document.getElementById('background-music-player');
+  // Single music source only: Paris Spring jazz.
+  const VIDEO_ID='k6CI60kNqug';
   const button=document.getElementById('music-toggle');
   const stateLabel=button.querySelector('.music-toggle__state');
-  audio.volume=0.28;
-  let userPaused=false;
-  const setPlaying=(playing)=>{
-    button.classList.toggle('is-playing',playing);
-    button.setAttribute('aria-pressed',String(playing));
-    button.setAttribute('aria-label',playing?'暫停背景音樂':'播放背景音樂');
-    stateLabel.textContent=playing?'暫停':'播放';
+  const frame=document.getElementById('background-music-player');
+  let playing=false;
+  let loaded=false;
+
+  const embedUrl=()=>{
+    const params=new URLSearchParams({
+      autoplay:'1',
+      mute:'0',
+      controls:'0',
+      disablekb:'1',
+      fs:'0',
+      playsinline:'1',
+      rel:'0',
+      loop:'1',
+      playlist:VIDEO_ID,
+      enablejsapi:'1'
+    });
+    if(location.origin && location.origin.startsWith('http')) params.set('origin',location.origin);
+    return 'https://www.youtube.com/embed/'+VIDEO_ID+'?'+params.toString();
   };
-  const play=()=>{
-    userPaused=false;
-    const promise=audio.play();
-    if(promise&&typeof promise.then==='function') promise.then(()=>setPlaying(true)).catch(()=>setPlaying(false));
+
+  const setPlaying=(value)=>{
+    playing=value;
+    button.classList.toggle('is-playing',value);
+    button.setAttribute('aria-pressed',String(value));
+    button.setAttribute('aria-label',value?'Pause background music':'Play background music');
+    stateLabel.textContent=value?'Pause':'Play';
   };
-  const pause=()=>{ userPaused=true; audio.pause(); setPlaying(false); };
-  button.addEventListener('click',()=>audio.paused?play():pause());
-  audio.addEventListener('play',()=>setPlaying(true));
-  audio.addEventListener('pause',()=>setPlaying(false));
-  audio.addEventListener('ended',()=>{ if(!userPaused){audio.currentTime=0;play();} });
-  const firstInteraction=(event)=>{
-    if(event.target&&event.target.closest&&event.target.closest('#music-toggle')) return;
-    if(!userPaused&&audio.paused) play();
+
+  const command=(func)=>{
+    try{
+      frame.contentWindow.postMessage(JSON.stringify({event:'command',func,args:[]}), 'https://www.youtube.com');
+    }catch(_){ }
   };
-  document.addEventListener('pointerdown',firstInteraction,{once:true,passive:true});
-  document.addEventListener('keydown',firstInteraction,{once:true});
-  window.addEventListener('load',()=>{ if(!userPaused) play(); });
+
+  const loadAndPlay=()=>{
+    frame.src=embedUrl();
+    loaded=true;
+    setPlaying(true);
+  };
+
+  const pauseMusic=()=>{ command('pauseVideo'); setPlaying(false); };
+  const resumeMusic=()=>{
+    if(!loaded){ loadAndPlay(); return; }
+    command('playVideo');
+    setTimeout(()=>{ if(playing) command('playVideo'); },300);
+    setPlaying(true);
+  };
+
+  // Best-effort autoplay. If the browser blocks audible autoplay, first interaction retries it.
+  loadAndPlay();
+
+  const unlock=()=>{
+    frame.src=embedUrl();
+    loaded=true;
+    setPlaying(true);
+    window.removeEventListener('pointerdown',unlock,true);
+    window.removeEventListener('keydown',unlock,true);
+  };
+  window.addEventListener('pointerdown',unlock,true);
+  window.addEventListener('keydown',unlock,true);
+
+  button.addEventListener('click',(e)=>{
+    e.stopPropagation();
+    playing?pauseMusic():resumeMusic();
+  });
 })();
 </script>
 </body></html>
